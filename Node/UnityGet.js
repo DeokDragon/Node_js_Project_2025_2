@@ -30,7 +30,7 @@ app.post("/userdata", (req, res)=>{
 
     if(user === undefined)
     {
-        user.push({id,data});
+        users.push({id,data});
         result.cmd = 1001;
         result.message = "유저 신규 등록";
     }
@@ -44,12 +44,12 @@ app.post("/userdata", (req, res)=>{
     res.send(result);
 })
 
-app.get("/userdata/list", (req, res)=>{
+app.get("/userdata/list" , (req, res) => {
     let result = users.sort(function(a,b)
     {
         return b.score - a.score;
     });
-    result = result.slice(0,users,length);
+    result = result.slice(0,users.length);
     res.send({
         cmd : 1101,
         message : '',
