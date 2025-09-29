@@ -3,5 +3,5 @@ function add(a,b)
     return a + b;
 }
 
-//이거 없으면 js에서 못가지고 옴
+//이걸 안 쓰면 js에서 add를 못 가져옴 
 module.exports = {add};
