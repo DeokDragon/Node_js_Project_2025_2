@@ -11,7 +11,7 @@ public class GameView : MonoBehaviour
     public Text metalText;
     public Text crystalText;
     public Text deuteriumText;
-    public Text playerNameInput;
+    public InputField playerNameInput;
     
     public Button registerButton;
     public Button loginButton;

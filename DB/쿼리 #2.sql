@@ -15,6 +15,8 @@ INSERT INTO items(name, DESCRIPTION, VALUE) VALUES
 
 SELECT * FROM items
 
+SELECT * FROM player_quests
+
 -- 13. 플레이어 인벤토리 테이블 생성
 CREATE TABLE inventorties(
 	inventory_id INT AUTO_INCREMENT PRIMARY KEY,
