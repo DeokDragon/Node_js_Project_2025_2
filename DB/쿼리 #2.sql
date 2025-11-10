@@ -34,7 +34,7 @@ INSERT INTO inventorties (player_id, item_id, quantity) VALUES
 (2, 2, 1)
 
 -- 15. 플레이어의 인벤토리 조회
-SELECT p.username, i.name, inv.quantity
+SELECT p.username, i.name, inv.quantityquests
 FROM players p
 JOIN inventorties inv ON p.player_id = inv.player_id
 JOIN items i ON inv.item_id = i.item_id

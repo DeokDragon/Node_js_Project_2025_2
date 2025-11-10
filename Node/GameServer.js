@@ -12,6 +12,12 @@ const pool = mysql.createPool({
 
 });
 
+const PORT = 3000;
+
+app.listen(PORT , ()=> {
+    console.log(`서버 실행 중 : ${PORT}`);
+});
+
 //플레이어로그인
 app.post('/login', async (req , res) => {
     const {username, password_hash} = req.body;
@@ -60,10 +66,11 @@ app.get('/quests/:playerID', async(req,res) => {
     try{
         console.log("try quests 문 진입");
         const[quests] = await pool.query(
-            'SELECT q.*, pq.`status` FROM player_quests pq JOIN quests q ON pq.quest_id = q.quest_id WHERE pq.player_id = ?',
+            'SELECT q.*, pq.`STATUS` FROM player_quests pq JOIN quests q ON pq.quest_id = q.quest_id WHERE pq.player_id = 1',
             [req.params.playerId]
         );
-        res.status(500).json({sucess: false, message : error.message});
+        console.log(quests);
+        res.json(quests);
     }
     catch (error)
     {
@@ -71,8 +78,3 @@ app.get('/quests/:playerID', async(req,res) => {
     }
 })
 
-const PORT = 3000;
-
-app.listen(PORT , ()=> {
-    console.log(`서버 실행 중 : ${PORT}`);
-});

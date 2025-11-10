@@ -64,7 +64,7 @@ public class GameDataManager : MonoBehaviour
                 Debug.Log("진행 중인 퀘스트 : ");
                 foreach(var quest in playerQuests)
                 {
-                    Debug.Log($" - {quest.title} {quest.status}");
+                    Debug.Log($" - {quest.title} {quest.status})");
                 }
                 OnQuestUpdate?.Invoke(playerQuests);
             }
